@@ -1,0 +1,24 @@
+.ksm-loader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  background: #f4efe7;
+  color: #172e50;
+  font: 500 14px/1.4 system-ui, sans-serif;
+}
+.ksm-loader-mark { position: relative; display: grid; place-items: center; width: 72px; height: 72px; }
+.ksm-loader-mark img { width: 52px; height: 52px; border-radius: 50%; padding: 6px; box-sizing: border-box; background: #2f5683; }
+.ksm-loader-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid #d6ded6;
+  border-top-color: #204c40;
+  border-radius: 50%;
+  animation: ksm-loader-spin 1s linear infinite;
+}
+@keyframes ksm-loader-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ksm-loader-mark::after { animation: none; } }
